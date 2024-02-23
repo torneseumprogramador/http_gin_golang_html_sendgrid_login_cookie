@@ -1,0 +1,40 @@
+  <!-- ======= Why Us Section ======= -->
+  <section id="why-us" class="why-us section-bg">
+    <div class="container-fluid" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+          <div class="content">
+            <h2>Recuperar senha</h2>
+            <form action="/esqueci" method="POST">
+                <div class="form-group">
+                    <label for="admEmail">Email</label>
+                    <input type="text" class="form-control" id="admEmail" name="email" placeholder="Digite o email">
+                </div>
+                <br>
+
+                {{with .erro}}
+                  <div class="alert alert-danger" role="alert">
+                    {{.Error}}
+                  </div>
+                {{end}}
+
+                {{if .sucesso}}
+                  <div class="alert alert-success" role="alert">
+                    {{.sucesso}}
+                  </div>
+                {{end}}
+
+                <br>
+
+                <button type="submit" class="btn btn-primary">Recuperar</button>
+                <a href="/login" class="btn btn-default">Voltar</a>
+            </form>
+          </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->

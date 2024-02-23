@@ -1,0 +1,38 @@
+  <!-- ======= Why Us Section ======= -->
+  <section id="why-us" class="why-us section-bg">
+    <div class="container-fluid" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+          <div class="content">
+            <h3>Administradores</h3>
+            <hr>
+            <a href="/administradores/novo" class="btn btn-primary">Novo</a>
+            <hr>
+            <table class="table" style="width: 100%;">
+              <thead class="thead-dark">
+                  <tr>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th colspan="2">Ações</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {{range .administradores}}
+                  <tr>
+                      <td>{{.Nome}}</td>
+                      <td>{{.Email}}</td>
+                      <td style="width: 10px;"><a href="/administradores/{{.Id}}/editar" class="btn btn-warning">Alterar</a></td>
+                      <td style="width: 10px;"><a href="/administradores/{{.Id}}/excluir" onclick="return confirm('Confirma?')" class="btn btn-danger">Excluir</a></td>
+                  </tr>
+                  {{end}}
+              </tbody>
+            </table>
+          </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->

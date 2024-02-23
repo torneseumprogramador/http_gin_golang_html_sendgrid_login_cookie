@@ -1,0 +1,49 @@
+  <!-- ======= Why Us Section ======= -->
+  <section id="why-us" class="why-us section-bg">
+    <div class="container-fluid" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+          <div class="content">
+            <h2>{{ .titulo }}</h2>
+            <form action="{{ .action }}" method="POST">
+                <div class="form-group">
+                    <label for="petNome">Nome</label>
+                    <input type="text" class="form-control" id="petNome" value="{{ .pet.Nome }}" name="nome" placeholder="Digite o nome do Pet">
+                </div>
+                <div class="form-group">
+                    <label for="petDono">Dono</label>
+                    <select class="form-control" id="petDonoId" name="dono_id">
+                      {{range .donos}}
+                        <option value="{{.Id}}" {{if eq $.pet.DonoId .Id}}selected{{end}}>{{.Nome}}</option>
+                      {{end}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="petTipo">Tipo</label>
+                    <select class="form-control" id="petTipo" name="tipo">
+                      <option value="0" {{if eq .pet.Tipo 0}}selected{{end}}>Cachorro</option>
+                      <option value="1" {{if eq .pet.Tipo 1}}selected{{end}}>Gato</option>
+                      <option value="2" {{if eq .pet.Tipo 2}}selected{{end}}>Outros</option>
+                    </select>
+                </div>
+                <br>
+
+                {{with .erro}}
+                  <div class="alert alert-danger" role="alert">
+                    {{.Error}}
+                  </div>
+                {{end}}
+                <br>
+
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="/pets" class="btn btn-default">Voltar</a>
+            </form>
+          </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->

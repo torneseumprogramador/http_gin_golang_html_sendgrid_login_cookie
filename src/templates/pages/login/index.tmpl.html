@@ -1,0 +1,41 @@
+  <!-- ======= Why Us Section ======= -->
+  <section id="why-us" class="why-us section-bg">
+    <div class="container-fluid" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+          <div class="content">
+            <h2>{{ .titulo }}</h2>
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Digite o email">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite o senha">
+                </div>
+                <br>
+
+                {{with .erro}}
+                  <div class="alert alert-danger" role="alert">
+                    {{.Error}}
+                  </div>
+                {{end}}
+                <div>
+                  <a href="/registrar" >Não tem conta ?</a>
+                </div>
+                <div>
+                  <a href="/esqueci" >Esqueceu senha ?</a>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Logar</button>
+            </form>
+          </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->

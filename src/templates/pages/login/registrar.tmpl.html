@@ -1,0 +1,44 @@
+  <!-- ======= Why Us Section ======= -->
+  <section id="why-us" class="why-us section-bg">
+    <div class="container-fluid" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+          <div class="content">
+            <h2>Registrando Usuário</h2>
+            <form action="/registrar" method="POST">
+                <div class="form-group">
+                    <label for="admNome">Nome</label>
+                    <input type="text" class="form-control" id="admNome" value="{{ .administrador.Nome }}" name="nome" placeholder="Digite o nome">
+                </div>
+                <div class="form-group">
+                    <label for="admEmail">Email</label>
+                    <input type="text" class="form-control" id="admEmail" name="email" value="{{ .administrador.Email }}" placeholder="Digite o email">
+                </div>
+                <div class="form-group">
+                    <label for="admSenha">Senha</label>
+                    <input type="password" class="form-control" id="admSenha" name="senha" placeholder="Digite o senha">
+                </div>
+                <div class="form-group">
+                    <label for="admcSenha">Confirmação Senha</label>
+                    <input type="password" class="form-control" id="admcSenha" name="csenha" placeholder="Digite o senha">
+                </div>
+                <br>
+
+                {{with .erro}}
+                  <div class="alert alert-danger" role="alert">
+                    {{.Error}}
+                  </div>
+                {{end}}
+                <br>
+
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+          </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->

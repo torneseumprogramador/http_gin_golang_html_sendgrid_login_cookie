@@ -1,0 +1,27 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top" style="background-color: rgba(40, 58, 90, 0.9);">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="/">Desafio GO</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="/" class="logo me-auto"><img src="/public/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          {{if .adm}} <!-- Verifica se o administrador está logado -->
+            <!-- Links visíveis apenas para administradores logados -->
+            <li><a class="nav-link scrollto {{if eq .currentRoute "donos"}}active{{end}}" href="/donos">Donos</a></li>
+            <li><a class="nav-link scrollto {{if eq .currentRoute "pets"}}active{{end}}" href="/pets">Pets</a></li>
+            <li><a class="nav-link scrollto {{if eq .currentRoute "administradores"}}active{{end}}" href="/administradores">Administradores</a></li>
+            <li><a class="nav-link scrollto" href="/sair">Sair</a></li>
+          {{else}}
+            <!-- Link para login visível apenas para não logados -->
+            <li><a class="nav-link scrollto {{if eq .currentRoute "home"}}active{{end}}" href="/">Home</a></li>
+            <li><a class="nav-link scrollto {{if eq .currentRoute "login"}}active{{end}}" href="/login">Login</a></li>
+          {{end}}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
